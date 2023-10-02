@@ -1,0 +1,31 @@
+<h1>{{ action }} Premiações individuais</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Ano:</label>
+    <input name="year" value="{{ ind_award.year }}">
+  </div>
+
+  <div>
+    <label>Bola de ouro:</label>
+    <input name="golden_ball" value="{{ ind_award.golden_ball }}">
+  </div>
+
+  <div>
+    <label>Chuteira de ouro:</label>
+    <input name="golden_boot" value="{{ ind_award.golden_boot }}">
+  </div>
+
+  <div>
+    <label>Luva de ouro:</label>
+    <input name="golden_glove" value="{{ ind_award.golden_glove }}">
+  </div>
+
+  <div>
+    <label>Trofeu de jogador jovem:</label>
+    <input name="young_player_trophy" value="{{ ind_award.young_player_trophy }}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>

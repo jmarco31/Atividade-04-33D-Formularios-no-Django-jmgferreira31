@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>João Marco Gomes Ferreira</title>
+  <link href="{% static 'styles.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Sobre a Copa do Mundo</h1>
+  
+  <p style="text-align: justify;">
+    Aqui nessa página você encontrará <b>informações emocionantes</b> sobre um dos <u>maiores eventos esportivos do planeta</u>. <i>Conheça a história, as equipes e os momentos icônicos que fizeram desta competição uma celebração global do futebol.</i>
+    
+  <link href="https://brasilescola.uol.com.br/educacao-fisica/copa-mundo.htm">
+
+    
+  <div><img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2021/07/pes-com-chuteiras-disputando-por-bola-em-campo-de-futebol.jpg" width="300"></div>
+
+  <h2>Copas do Mundo</h2>
+  <!--ol>
+    <li>Brasil (5)</li>
+    <li>Alemanha (4)</li>
+    <li>Itália (4)</li>
+    <li>Argentina (3)</li>
+    <li>França (2)</li>
+  </ol>-->
+  <ol>
+    {% for cup in cups %}
+    <li>
+      {{cup.year}}
+      <a href="/cups/update/{{ cup.id }}">Atualizar</a>
+      <a href="/cups/delete/{{ cup.id }}">Remover</a>
+    </li>
+    {% endfor %}
+  </ol>
+  <a href="/cups">Adicionar Nova Copa do Mundo</a>
+
+  <h2>Premiações individuais</h2>
+  <!--ul>
+    <li>1958</li>
+    <li>1962</li>
+    <li>1970</li>
+    <li>1994</li>
+    <li>2022</li>
+  </ul>-->
+  <ul>
+    {% for ind in ind_awards %}
+    <li>
+      {{ind.year}}
+      <a href="/ind_awards/update/{{ ind.id }}">Atualizar</a>
+      <a href="/ind_awards/delete/{{ ind.id }}">Remover</a> 
+    </li>
+    {% endfor %}
+  </ul>
+  <a href="/ind_awards">Adicionar premiações individuais</a>
+  
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<h1>{{ action }} Copas</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Ano:</label>
+    <input name="year" value="{{ cup.year }}">
+  </div>
+
+  <div>
+    <label>Lugar:</label>
+    <input name="place" value="{{ cup.place }}">
+  </div>
+
+  <div>
+    <label>Campeao:</label>
+    <input name="champion" value="{{ cup.champion }}">
+  </div>
+
+    <div>
+    <label>Finalistas:</label>
+    <input name="finalists" value="{{ cup.finalists }}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>
