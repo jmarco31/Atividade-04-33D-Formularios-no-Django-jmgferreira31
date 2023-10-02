@@ -25,5 +25,4 @@ urlpatterns = [
     path('ind_awards', views.create_ind_award),
     path('ind_awards/update/<id>', views.update_ind_award),
     path('ind_awards/delete/<id>', views.delete_ind_award),
-    path('admin/', admin.site.urls),
 ]
